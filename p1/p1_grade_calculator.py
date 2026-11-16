@@ -34,3 +34,43 @@ def enter_grades():
     return grades
 student_grades = enter_grades()
 print("Entered Grades:", student_grades) # display the entered grades
+
+# Function to calculate the average
+def calculate_average(grades):
+    return sum(grades) / len(grades)
+
+
+# Function to find the highest grade
+def get_highest_grade(grades):
+    return max(grades)
+
+
+# Function to find the lowest grade
+def get_lowest_grade(grades):
+    return min(grades)
+
+
+# Function to check if the student passed
+def check_status(grades):
+    average = calculate_average(grades)
+
+    if average >= 75:
+        return "PASSED"
+    else:
+        return "FAILED"
+
+
+# Function to display the results
+def show_results(grades):
+    if len(grades) == 0:
+        print("\nPlease enter grades first.")
+        return
+
+    print("\n===== GRADE RESULTS =====")
+    print("Grades:", grades)
+    print(f"Average: {calculate_average(grades):.2f}")
+    print(f"Highest: {get_highest_grade(grades):.2f}")
+    print(f"Lowest: {get_lowest_grade(grades):.2f}")
+    print(f"Status: {check_status(grades)}")
+
+show_results(student_grades) # display the results of the entered grades
