@@ -3,7 +3,10 @@
 # P2: Custom Module: student_utils
 # Nov. 19, 2026
 
-import student_utils as su
+from student_utils import calculate_average
+from student_utils import get_highest_grade
+from student_utils import get_lowest_grade
+from student_utils import check_status
 import random
 
 # Accept and validate student grades
@@ -45,9 +48,9 @@ def show_results(grades):
 
     print("\n===== GRADE RESULTS =====")
     print(f"Hello, {random.choice(['Allen', 'Mark', 'Gilbert', 'Juan', 'John'])}!, your grades are: {student_grades}") # Example usage of the built-in random module
-    print(f"Average: {su.calculate_average(grades):.2f}")
-    print(f"Highest: {su.get_highest_grade(grades):.2f}")
-    print(f"Lowest: {su.get_lowest_grade(grades):.2f}")
-    print(f"Status: {su.check_status(grades)}")
+    print(f"Average: {calculate_average(grades):.2f}")
+    print(f"Highest: {get_highest_grade(grades):.2f}")
+    print(f"Lowest: {get_lowest_grade(grades):.2f}")
+    print(f"Status: {check_status(grades)}")
 
 show_results(student_grades)
