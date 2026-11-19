@@ -32,8 +32,6 @@ def enter_grades():
                 print("Invalid input. Enter a number.") # validate the input to ensure it is a valid number
 
     return grades
-student_grades = enter_grades()
-print("Entered Grades:", student_grades) # display the entered grades
 
 # Function to calculate the average
 def calculate_average(grades):
@@ -73,4 +71,44 @@ def show_results(grades):
     print(f"Lowest: {get_lowest_grade(grades):.2f}")
     print(f"Status: {check_status(grades)}")
 
-show_results(student_grades) # display the results of the entered grades
+
+
+# Main function for the menu
+def main():
+    grades = []
+
+    # Repeat the menu until the user exits
+    while True:
+        print("\n===== STUDENT GRADE CALCULATOR =====")
+        print("1. Enter Grades")
+        print("2. View Results")
+        print("3. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            grades = enter_grades()
+            print("Grades saved successfully!")
+
+        elif choice == "2":
+            show_results(grades)
+
+        elif choice == "3":
+            print("Thank you for using the program!")
+            break
+
+        else:
+            print("Invalid choice. Please try again.")
+
+
+# Run the program
+main()
+
+
+# A local variable is created inside a function and can only
+# be used within that function.
+# For example, average is a local variable in check_status().
+# A global variable is created outside functions and can be
+# accessed by different functions.
+# This program uses local variables and passes grades as
+# parameters instead of using a global variable.
