@@ -3,6 +3,7 @@
 # P4: Safe Menu Program
 # Nov. 27, 2026
 
+# Division
 def division():
     print("\n========== DIVISION CALCULATOR ==========")
 
@@ -28,9 +29,7 @@ def division():
         print("\nDivision operation completed.")
         print("=========================================")
 
-# division()
-
-# 2. Open and Read File
+# Open and Read File
 def open_file():
     print("\n========== FILE READER ==========")
 
@@ -56,4 +55,36 @@ def open_file():
         print("\nFile operation completed.")
         print("=================================")
 
-open_file()
+
+# Main Menu
+def main():
+    while True:
+        print("\n" + "=" * 45)
+        print("          EXCEPTION HANDLING SYSTEM")
+        print("=" * 45)
+        print("  [1] Division Calculator")
+        print("  [2] Open and Read File")
+        print("  [3] Exit Program")
+        print("=" * 45)
+
+        choice = input("  Enter your choice (1-3): ").strip()
+
+        if choice == "1":
+            division()
+
+        elif choice == "2":
+            open_file()
+
+        elif choice == "3":
+            print("\nThank you for using the program!")
+            print("Program terminated.")
+            break
+
+        else:
+            print("\n[ERROR] Invalid menu choice!")
+            print("Please select only from 1 to 3.")
+
+# Run the program
+if __name__ == "__main__":
+    main()
+
