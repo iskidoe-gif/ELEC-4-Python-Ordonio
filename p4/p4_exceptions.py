@@ -28,4 +28,32 @@ def division():
         print("\nDivision operation completed.")
         print("=========================================")
 
-division()
+# division()
+
+# 2. Open and Read File
+def open_file():
+    print("\n========== FILE READER ==========")
+
+    filename = input("Enter file name: ").strip()
+
+    try:
+        with open(filename, "r") as file:
+            contents = file.read()
+
+    except FileNotFoundError:
+        print(f"\n[ERROR] The file '{filename}' was not found.")
+
+    else:
+        print("\n[FILE CONTENTS]")
+        print("---------------------------------")
+        if contents:
+            print(contents)
+        else:
+            print("The file is empty.")
+        print("---------------------------------")
+
+    finally:
+        print("\nFile operation completed.")
+        print("=================================")
+
+open_file()
