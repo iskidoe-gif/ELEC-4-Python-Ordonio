@@ -47,7 +47,7 @@ def remove_student():
 
 # 3. Search for a student
 def search_student():
-    keyword = input("\nEnter student name or keyword: ").strip()
+    keyword = input("\nEnter student name or keyword: ").strip()  # search for a student by name or keyword
 
     if not keyword:
         print("\n[!] Please enter a search keyword.")
@@ -96,7 +96,39 @@ def display_students():
 
     print("=" * 45)
 
-add_student()
-remove_student()
-# search_student()
-display_students()
+# Menu options
+def menu():
+    while True: 
+        print("\n" + "=" * 45)
+        print("             STUDENT RECORD MANAGEMENT")
+        print("=" * 45)
+        print("  1. Add Student")
+        print("  2. Remove Student")
+        print("  3. Search Student")
+        print("  4. Display All Students")
+        print("  5. Exit")
+        print("=" * 45)
+
+        choice = input("Enter your choice (1-5): ").strip() # remove leading and trailing whitespace from the input choice
+
+        if choice == "1":
+            add_student()
+        elif choice == "2":
+            remove_student()
+        elif choice == "3":
+            search_student()
+        elif choice == "4":
+            display_students()
+        elif choice == "5":
+            print("\n[+] Exiting the program...")
+            break
+        else:
+            print("\n[!] Invalid choice. Please enter a number between 1 and 5.")
+
+if __name__ == "__main__":
+    menu()
+
+# List can contain duplicate elements. Meanwhile, Set  contain only unique elements and removes duplicates automatically. 
+# In this program, we use a list to store the student names in the order they were added,
+# while we use a set to keep track of unique student names for quick existence checks. 
+# This combination allows management of the student records while ensuring that no duplicate names are added.
